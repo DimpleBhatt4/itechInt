@@ -19,7 +19,7 @@ export default function Industry() {
       >
         <div className="mx-auto max-w-7xl">
           {/* Text */}
-          <p className="text-sm font-semibold text-white">
+          <p className="largeScreenSubHead font-bold text-white">
            Industries We Serve
           </p>
 

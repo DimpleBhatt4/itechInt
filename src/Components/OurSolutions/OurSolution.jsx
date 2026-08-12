@@ -22,7 +22,7 @@ export default function OurSolutions() {
       >
         <div className="mx-auto max-w-7xl">
           {/* Text */}
-          <p className="text-sm font-semibold text-white">
+          <p className="largeScreenSubHead font-bold text-white">
             Our Solutions
           </p>
 

@@ -195,7 +195,7 @@ const AllIndustry = () => {
                 <h3
                   className="
                     flex-1
-                    text-sm
+                    largeScreenSubHead
                     font-semibold
                     leading-5
                     text-white

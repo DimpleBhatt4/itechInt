@@ -1,4 +1,5 @@
 import BentoGrids from "./BentoGrids";
+import Carousel from "./Carousel";
 
 export default function HeroBanner() {
   return (
@@ -18,7 +19,6 @@ export default function HeroBanner() {
         lg:flex
         lg:gap-x-12
         lg:px-16
-        lg:pt-0
         xl:gap-x-20
         xl:px-24
       "
@@ -137,9 +137,11 @@ export default function HeroBanner() {
             ring-1
             ring-white/10
             sm:p-3
+            h-full
           "
         >
-          <BentoGrids />
+          <Carousel />
+          {/* <BentoGrids /> */}
         </div>
       </div>
     </div>

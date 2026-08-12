@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import cij from "../../assets/itech_solution_icons_svg/continuous-inkjet-cij.svg";
 import lms from "../../assets/itech_solution_icons_svg/laser-marking-systems.svg";
 import tij from "../../assets/itech_solution_icons_svg/thermal-inkjet-tij.svg";
@@ -13,67 +15,104 @@ import pa from "../../assets/itech_solution_icons_svg/packaging-automation.svg";
 import ttc from "../../assets/itech_solution_icons_svg/track-trace-solutions.svg";
 import ic from "../../assets/itech_solution_icons_svg/industrial-consumables.svg";
 
-
+import {
+  cijProductInfo,
+  laserProductInfo,
+  tijProductInfo,
+  ttoProductInfo,
+  largeCharacterProductInfo,
+  highResolutionProductInfo,
+  labelProductInfo,
+  visionProductInfo,
+  checkweigherProductInfo,
+  metalDetectorProductInfo,
+  packagingProductInfo,
+  trackTraceProductInfo,
+  consumablesProductInfo,
+} from "./productInfo";
 
 const AllTypes = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       name: "Continuous Inkjet (CIJ)",
       icon: cij,
+      infoPage: cijProductInfo,
     },
     {
       name: "Laser Marking Systems",
       icon: lms,
+      infoPage: laserProductInfo,
     },
     {
       name: "Thermal Inkjet (TIJ)",
       icon: tij,
+      infoPage: tijProductInfo,
     },
     {
       name: "Thermal Transfer Overprinters (TTO)",
       icon: tto,
+      infoPage: ttoProductInfo,
     },
     {
       name: "Large Character Printers",
       icon: lcp,
+      infoPage: largeCharacterProductInfo,
     },
     {
       name: "High-Resolution Printers",
       icon: hrp,
+      infoPage: highResolutionProductInfo,
     },
     {
       name: "Label Printing & Applicators",
       icon: lpa,
+      infoPage: labelProductInfo,
     },
     {
       name: "Vision Inspection Systems",
       icon: vis,
+      infoPage: visionProductInfo,
     },
     {
       name: "Checkweighers",
       icon: cw,
+      infoPage: checkweigherProductInfo,
     },
     {
       name: "Metal Detectors",
       icon: md,
+      infoPage: metalDetectorProductInfo,
     },
     {
       name: "Packaging Automation",
       icon: pa,
+      infoPage: packagingProductInfo,
     },
     {
       name: "Track & Trace Solutions",
       icon: ttc,
+      infoPage: trackTraceProductInfo,
     },
     {
       name: "Industrial Consumables (Ink, Make-up, Solvents, Ribbons)",
       icon: ic,
+      infoPage: consumablesProductInfo,
     },
   ];
 
+  const handleProductClick = (product) => {
+    navigate(`/products/${product.infoPage.id}`, {
+      state: {
+        product: product.infoPage,
+      },
+    });
+  };
+
   return (
-    <div className="w-full">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => {
           const isConsumables =
             feature.name ===
@@ -82,8 +121,10 @@ const AllTypes = () => {
           return (
             <div
               key={index}
+              onClick={() => handleProductClick(feature)}
               className={`
                 group
+                cursor-pointer
                 rounded-2xl
                 border border-slate-100
                 bgGrey
@@ -96,7 +137,6 @@ const AllTypes = () => {
               `}
             >
               {isConsumables ? (
-                /* Industrial Consumables */
                 <div
                   className="
                     flex
@@ -108,7 +148,6 @@ const AllTypes = () => {
                     py-6
                   "
                 >
-                  {/* Icon */}
                   <div
                     className="
                       flex
@@ -122,18 +161,13 @@ const AllTypes = () => {
                       group-hover:scale-110
                     "
                   >
-                    {feature.icon ? (
-                      <img
-                        src={feature.icon}
-                        alt={feature.name}
-                        className="h-14 w-14 object-contain"
-                      />
-                    ) : (
-                      <div className="h-14 w-14 rounded-full bg-[#0c005a]/5" />
-                    )}
+                    <img
+                      src={feature.icon}
+                      alt={feature.name}
+                      className="h-14 w-14 object-contain"
+                    />
                   </div>
 
-                  {/* Content */}
                   <div>
                     <h3
                       className="
@@ -155,7 +189,6 @@ const AllTypes = () => {
                   </div>
                 </div>
               ) : (
-                /* Regular Cards */
                 <div
                   className="
                     flex
@@ -168,7 +201,6 @@ const AllTypes = () => {
                     text-center
                   "
                 >
-                  {/* Icon */}
                   <div
                     className="
                       mb-5
@@ -182,22 +214,17 @@ const AllTypes = () => {
                       group-hover:scale-110
                     "
                   >
-                    {feature.icon ? (
-                      <img
-                        src={feature.icon}
-                        alt={feature.name}
-                        className="h-14 w-14 object-contain"
-                      />
-                    ) : (
-                      <div className="h-14 w-14 rounded-full bg-[#0c005a]/5" />
-                    )}
+                    <img
+                      src={feature.icon}
+                      alt={feature.name}
+                      className="h-14 w-14 object-contain"
+                    />
                   </div>
 
-                  {/* Name */}
                   <h3
                     className="
                       max-w-[210px]
-                      text-sm
+                      largeScreenSubHead
                       font-semibold
                       leading-5
                       textOrange
@@ -207,7 +234,6 @@ const AllTypes = () => {
                     {feature.name}
                   </h3>
 
-                  {/* Bottom Line */}
                   <div
                     className="
                       mt-4

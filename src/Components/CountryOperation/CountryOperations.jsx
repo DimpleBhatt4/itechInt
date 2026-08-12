@@ -4,7 +4,7 @@ import {
   ServerIcon,
 } from "@heroicons/react/20/solid";
 
-import eastAfricaOp from "../../assets/eastAfricaOp.png";
+import eastAfricaMapNoBg from "../../assets/eastAfricaMapNoBg.png"
 
 const countries = [
   "Kenya",
@@ -46,13 +46,12 @@ const features = [
 
 export default function CountryOperations() {
   return (
-    <div className="overflow-hidden bgBlue py-24 sm:py-32">
+    <div className="overflow-hidden bgBlue py-2 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div
           className="
             mx-auto
             grid
-            max-w-2xl
             grid-cols-1
             items-center
             gap-x-12
@@ -86,14 +85,14 @@ export default function CountryOperations() {
               </p>
 
               {/* Description */}
-              <p className="mt-6 text-lg/8 text-white">
+              <p className="mt-4 text-lg/8 text-white">
                 Delivering reliable coding, marking, and traceability
                 solutions across East Africa with local expertise, fast
                 response times, and dependable after-sales support.
               </p>
 
               {/* Countries */}
-              <div className="mt-8">
+              <div className="mt-4">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
                   Countries We Serve
                 </p>
@@ -125,10 +124,10 @@ export default function CountryOperations() {
               </div>
 
               {/* Operations */}
-              <dl className="mt-10 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+              <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
                 {features.map((feature) => {
                   const Icon = feature.icon;
-
+                 
                   return (
                     <div
                       key={feature.name}
@@ -138,7 +137,7 @@ export default function CountryOperations() {
                         border
                         border-white/15
                         bg-white/5
-                        p-5
+                        p-2
                         transition-all
                         duration-300
                         hover:border-white/30
@@ -146,7 +145,7 @@ export default function CountryOperations() {
                       "
                     >
                       {/* Icon */}
-                      <div
+                      {/* <div
                         className="
                           mb-3
                           flex
@@ -162,7 +161,7 @@ export default function CountryOperations() {
                           aria-hidden="true"
                           className="h-5 w-5 text-white"
                         />
-                      </div>
+                      </div> */}
 
                       {/* Title */}
                       <dt className="font-semibold text-white">
@@ -181,21 +180,16 @@ export default function CountryOperations() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="flex items-center justify-center lg:h-full">
+          <div className="flex justify-center lg:h-full gap-4">
             <img
               alt="Itech East Africa Operations"
-              src={eastAfricaOp}
+              src={eastAfricaMapNoBg}
               width={2432}
               height={1442}
               className="
                 h-auto
                 max-h-[520px]
                 w-full
-                rounded-2xl
-                object-cover
-                shadow-2xl
-                ring-1
-                ring-white/10
               "
             />
           </div>

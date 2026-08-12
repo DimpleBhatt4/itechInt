@@ -34,3 +34,9 @@ body {
   color: var(--color-grey);
 
 }
+
+/* Font sizes */
+
+.largeScreenSubHead{
+  font-size: 20px;
+}

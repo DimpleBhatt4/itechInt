@@ -1,70 +1,38 @@
 "use client";
 
 import { useState } from "react";
+
 import {
   Dialog,
   DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverButton,
-  PopoverGroup,
   PopoverPanel,
 } from "@headlessui/react";
+
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
   ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+  SquaresPlusIcon,
+} from "@heroicons/react/24/outline";
 
-import logoInt from "../../assets/logoInt.jpeg"
+import logoWithoutBg from "../../assets/logoWithoutBg.png";
 
-// Products sub menu
 const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  "Continuous Inkjet (CIJ)",
+  "Laser Marking Systems",
+  "Thermal Inkjet (TIJ)",
+  "Thermal Transfer Overprinters (TTO)",
+  "Large Character Printers",
+  "High-Resolution Printers",
+  "Label Printing & Applicators",
+  "Vision Inspection Systems",
+  "Checkweighers",
+  "Metal Detectors",
+  "Packaging Automation",
+  "Track & Trace Solutions",
+  "Industrial Consumables (Ink, Make-up, Solvents, Ribbons)",
 ];
 
 export default function NavBar() {
@@ -72,162 +40,256 @@ export default function NavBar() {
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full bgOrange">
-      <nav
-        aria-label='Global'
-        className='mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8'>
-        <div className='flex lg:flex-1'>
-          <a href='#' className='-m-1.5 p-1.5'>
-            <span className='sr-only'>Your Company</span>
+      {/* Logo */}
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
+        <div className="flex lg:flex-1">
+          <a
+            href="/home"
+            className="-m-1.5 p-1.5"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span className="sr-only">Itech International Group</span>
+
             <img
-              alt=''
-              src={logoInt}
-              className='h-[45px] sm:h-[55px] md:h-[65px] lg:h-[70px] w-auto'
+              alt="Itech International Group"
+              src={logoWithoutBg}
+              className="h-[45px] w-auto sm:h-[55px] md:h-[65px] lg:h-[70px]"
             />
           </a>
         </div>
-        <div className='flex lg:hidden'>
+
+        {/* Mobile menu button */}
+        <div className="flex lg:hidden">
           <button
-            type='button'
+            type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'>
-            <span className='sr-only'>Open main menu</span>
-            <Bars3Icon aria-hidden='true' className='size-6' />
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          >
+            <span className="sr-only">Open main menu</span>
+
+            <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <PopoverGroup className='hidden lg:flex lg:gap-x-12'>
-          <a href='#' className='text-[15px] font-semibold textGrey'>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex lg:gap-x-10">
+          {/* Home */}
+          <a
+            href="/home"
+            className="text-[18px] font-semibold textGrey"
+          >
             Home
           </a>
-          <a href='#' className='text-[15px] font-semibold textGrey'>
+
+          {/* About Us */}
+          <a
+            href="/about"
+            className="text-[18px] font-semibold textGrey"
+          >
             About Us
           </a>
-          <a href='#' className='text-[15px] font-semibold textGrey'>
-            Our Solutions
-          </a>
-          <Popover className='relative'>
-            <PopoverButton className='flex items-center gap-x-1 text-[15px] font-semibold textGrey'>
-              Product
+
+          {/* ================= PRODUCTS POPOVER ================= */}
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-[18px] font-semibold textGrey outline-none">
+              Products
+
               <ChevronDownIcon
-                aria-hidden='true'
-                className='size-5 flex-none text-gray-400'
+                aria-hidden="true"
+                className="size-5"
               />
             </PopoverButton>
 
             <PopoverPanel
-              transition
-              className='absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-white shadow-lg outline-1 outline-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in'>
-              <div className='p-4'>
-                {products.map((item) => (
-                  <div
-                    key={item.name}
-                    className='group relative flex items-center gap-x-6 rounded-lg p-4 text-[15px] hover:bg-gray-50'>
-                    <div className='flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white'>
-                      <item.icon
-                        aria-hidden='true'
-                        className='size-6 text-gray-600 group-hover:text-indigo-600'
-                      />
-                    </div>
-                    <div className='flex-auto'>
-                      <a
-                        href={item.href}
-                        className='block font-semibold textGrey'>
-                        {item.name}
-                        <span className='absolute inset-0' />
-                      </a>
-                      <p className='mt-1 text-gray-600'>{item.description}</p>
-                    </div>
-                  </div>
-                ))}
+              className="absolute left-1/2 z-50 mt-5 w-screen max-w-6xl -translate-x-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-gray-900/10"
+            >
+              <div className="p-8 lg:p-10">
+                {/* Header */}
+                <div className="mb-8">
+                  <p className="text-sm font-semibold text-indigo-600">
+                    Our Products
+                  </p>
+
+                  <h3 className="mt-1 text-2xl font-semibold tracking-tight text-gray-900">
+                    Industrial Coding, Marking & Inspection Solutions
+                  </h3>
+
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
+                    Explore our range of industrial printing, marking,
+                    inspection, packaging, and traceability solutions.
+                  </p>
+                </div>
+
+                {/* Products */}
+                <div className="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {products.map((product) => (
+                    <a
+                      key={product}
+                      href="/products"
+                      className="group flex items-center gap-x-4 rounded-xl p-3 transition hover:bg-gray-50"
+                    >
+                      {/* Icon */}
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gray-50 text-gray-400 transition group-hover:bg-indigo-50 group-hover:text-indigo-600">
+                        <SquaresPlusIcon className="size-5" />
+                      </div>
+
+                      {/* Product name */}
+                      <span className="text-sm font-semibold leading-6 text-gray-900 transition group-hover:text-indigo-600">
+                        {product}
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
-              <div className='grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50'>
-                {callsToAction.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className='flex items-center justify-center gap-x-2.5 p-3 text-[15px] font-semibold textGrey hover:bg-gray-100'>
-                    <item.icon
-                      aria-hidden='true'
-                      className='size-5 flex-none text-gray-400'
-                    />
-                    {item.name}
-                  </a>
-                ))}
+
+              {/* Bottom CTA */}
+              <div className="flex flex-col gap-2 border-t border-gray-100 bg-gray-50 px-8 py-4 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+                <p className="text-sm text-gray-600">
+                  Need help choosing the right solution?
+                </p>
+
+                <a
+                  href="/contact"
+                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
+                >
+                  Talk to our experts
+                  <span
+                    aria-hidden="true"
+                    className="ml-1"
+                  >
+                    →
+                  </span>
+                </a>
               </div>
             </PopoverPanel>
           </Popover>
-        </PopoverGroup>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <a href='#' className='text-[15px] font-semibold textGrey'>
+
+          {/* Our Solutions */}
+          <a
+            href="/solutions"
+            className="text-[18px] font-semibold textGrey"
+          >
+            Our Solutions
+          </a>
+
+          {/* Industries */}
+          <a
+            href="/industries"
+            className="text-[18px] font-semibold textGrey"
+          >
+            Industries We Serve
+          </a>
+        </div>
+
+        {/* Contact Us */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="/contact"
+            className="text-[18px] font-semibold textGrey"
+          >
             Contact Us
           </a>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
-        className='lg:hidden'>
-        <div className='fixed inset-0 z-50' />
-        <DialogPanel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bgOrange p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
-          <div className='flex items-center justify-between'>
-            <a href='#' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
+        className="lg:hidden"
+      >
+        <div className="fixed inset-0 z-50" />
+
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bgOrange p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          {/* Mobile Header */}
+          <div className="flex items-center justify-between">
+            <a
+              href="/home"
+              onClick={() => setMobileMenuOpen(false)}
+              className="-m-1.5 p-1.5"
+            >
+              <span className="sr-only">
+                Itech International Group
+              </span>
+
               <img
-                alt=''
-                src={logoInt}
-                className='h-[45px] sm:h-[55px] md:h-[65px] lg:h-[70px] w-auto'
+                alt="Itech International Group"
+                src={logoWithoutBg}
+                className="h-[45px] w-auto sm:h-[55px] md:h-[65px] lg:h-[70px]"
               />
             </a>
+
             <button
-              type='button'
+              type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className='-m-2.5 rounded-md p-2.5 text-gray-700'>
-              <span className='sr-only'>Close menu</span>
-              <XMarkIcon aria-hidden='true' className='size-6' />
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+            >
+              <span className="sr-only">Close menu</span>
+
+              <XMarkIcon
+                aria-hidden="true"
+                className="size-6"
+              />
             </button>
           </div>
-          <div className='mt-6 flow-root'>
-            <div className='-my-6 divide-y divide-gray-500/10'>
-              <div className='space-y-2 py-6'>
-                <Disclosure as='div' className='-mx-3'>
-                  <DisclosureButton className='group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold textGrey hover:bg-gray-50'>
-                    Product
-                    <ChevronDownIcon
-                      aria-hidden='true'
-                      className='size-5 flex-none group-data-open:rotate-180'
-                    />
-                  </DisclosureButton>
-                  <DisclosurePanel className='mt-2 space-y-2'>
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as='a'
-                        href={item.href}
-                        className='block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold textGrey hover:bg-gray-50'>
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
-                </Disclosure>
+
+          {/* Mobile Navigation */}
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {/* Home */}
                 <a
-                  href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50'>
+                  href="/home"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50"
+                >
                   Home
                 </a>
+
+                {/* About Us */}
                 <a
-                  href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50'>
+                  href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50"
+                >
                   About Us
                 </a>
+
+                {/* Products */}
                 <a
-                  href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50'>
+                  href="/products"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50"
+                >
+                  Products
+                </a>
+
+                {/* Our Solutions */}
+                <a
+                  href="/solutions"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50"
+                >
                   Our Solutions
                 </a>
-              </div>
-              <div className='py-6'>
+
+                {/* Industries We Serve */}
                 <a
-                  href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold textGrey hover:bg-gray-50'>
+                  href="/industries"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold textGrey hover:bg-gray-50"
+                >
+                  Industries We Serve
+                </a>
+              </div>
+
+              {/* Contact Us */}
+              <div className="py-6">
+                <a
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold textGrey hover:bg-gray-50"
+                >
                   Contact Us
                 </a>
               </div>

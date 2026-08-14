@@ -4,7 +4,7 @@ import Carousel from "./Carousel";
 export default function HeroBanner() {
   return (
     <div
-      className="
+      className='
         relative
         isolate
         overflow-hidden
@@ -21,11 +21,10 @@ export default function HeroBanner() {
         lg:px-16
         xl:gap-x-20
         xl:px-24
-      "
-    >
+      '>
       {/* Content */}
       <div
-        className="
+        className='
           mx-auto
           max-w-2xl
           text-center
@@ -36,10 +35,9 @@ export default function HeroBanner() {
           lg:py-24
           lg:text-left
           xl:py-32
-        "
-      >
+        '>
         <h2
-          className="
+          className='
             text-3xl
             font-semibold
             tracking-tight
@@ -47,27 +45,25 @@ export default function HeroBanner() {
             text-white
             sm:text-4xl
             md:text-5xl
-          "
-        >
+          '>
           Empowering Global Manufacturing with Smart Coding, Marking &
           Traceability Solutions
         </h2>
 
         <p
-          className="
+          className='
             mt-6
             text-base/7
             text-pretty
             text-gray-300
             sm:text-lg/8
-          "
-        >
+          '>
           Delivering innovative coding, packaging, inspection, labeling, and
           traceability solutions across the Middle East and East Africa.
         </p>
 
         <div
-          className="
+          className='
             mt-8
             flex
             flex-col
@@ -77,11 +73,12 @@ export default function HeroBanner() {
             sm:justify-center
             lg:mt-10
             lg:justify-start
-          "
-        >
+          '>
           <a
-            href="#"
-            className="
+            href='https://wa.me/8006902440?text=Hi! I’d like to know more about your products and services.'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='
               w-full
               rounded-md
               bgOrange
@@ -95,29 +92,27 @@ export default function HeroBanner() {
               transition
               hover:opacity-90
               sm:w-auto
-            "
-          >
+            '>
             Contact Our Experts
           </a>
 
           <a
-            href="#"
-            className="
+            href='#'
+            className='
               text-sm/6
               font-semibold
               text-white
               transition
               hover:text-gray-300
-            "
-          >
-            Learn more <span aria-hidden="true">→</span>
+            '>
+            Learn more <span aria-hidden='true'>→</span>
           </a>
         </div>
       </div>
 
       {/* Bento Images */}
       <div
-        className="
+        className='
           relative
           mt-12
           w-full
@@ -126,10 +121,9 @@ export default function HeroBanner() {
           lg:flex-none
           lg:py-8
           xl:w-[52%]
-        "
-      >
+        '>
         <div
-          className="
+          className='
             w-full
             rounded-2xl
             bg-white/5
@@ -138,8 +132,7 @@ export default function HeroBanner() {
             ring-white/10
             sm:p-3
             h-full
-          "
-        >
+          '>
           <Carousel />
           {/* <BentoGrids /> */}
         </div>

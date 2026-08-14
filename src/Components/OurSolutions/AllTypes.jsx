@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import cij from "../../assets/itech_solution_icons_svg/continuous-inkjet-cij.svg";
 import lms from "../../assets/itech_solution_icons_svg/laser-marking-systems.svg";
@@ -32,8 +32,6 @@ import {
 } from "./productInfo";
 
 const AllTypes = () => {
-  const navigate = useNavigate();
-
   const features = [
     {
       name: "Continuous Inkjet (CIJ)",
@@ -102,27 +100,22 @@ const AllTypes = () => {
     },
   ];
 
-  const handleProductClick = (product) => {
-    navigate(`/products/${product.infoPage.id}`, {
-      state: {
-        product: product.infoPage,
-      },
-    });
-  };
-
   return (
     <div>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
         {features.map((feature, index) => {
           const isConsumables =
             feature.name ===
             "Industrial Consumables (Ink, Make-up, Solvents, Ribbons)";
 
           return (
-            <div
+            <Link
               key={index}
-              onClick={() => handleProductClick(feature)}
-              className={`
+              to={`/products/${feature.infoPage.id}`}
+              state={{
+                product: feature.infoPage,
+              }}
+              className={`block
                 group
                 cursor-pointer
                 rounded-2xl
@@ -134,11 +127,10 @@ const AllTypes = () => {
                 hover:-translate-y-1
                 hover:shadow-[0_8px_25px_rgba(12,0,90,0.12)]
                 ${isConsumables ? "lg:col-span-4" : ""}
-              `}
-            >
+              `}>
               {isConsumables ? (
                 <div
-                  className="
+                  className='
                     flex
                     min-h-[120px]
                     items-center
@@ -146,10 +138,9 @@ const AllTypes = () => {
                     gap-6
                     px-6
                     py-6
-                  "
-                >
+                  '>
                   <div
-                    className="
+                    className='
                       flex
                       h-16
                       w-16
@@ -159,38 +150,36 @@ const AllTypes = () => {
                       transition-transform
                       duration-300
                       group-hover:scale-110
-                    "
-                  >
+                    '>
                     <img
                       src={feature.icon}
                       alt={feature.name}
-                      className="h-14 w-14 object-contain"
+                      className='h-14 w-14 object-contain'
                     />
                   </div>
 
                   <div>
                     <h3
-                      className="
+                      className='
                         text-base
                         font-semibold
                         leading-6
                         textOrange
                         sm:text-lg
-                      "
-                    >
+                      '>
                       Industrial Consumables
                     </h3>
 
-                    <p className="mt-1 text-sm font-medium text-slate-700">
+                    <p className='mt-1 text-sm font-medium text-slate-700'>
                       (Ink, Make-up, Solvents, Ribbons)
                     </p>
 
-                    <div className="mt-3 h-1 w-9 rounded-full bgBlue" />
+                    <div className='mt-3 h-1 w-9 rounded-full bgBlue' />
                   </div>
                 </div>
               ) : (
                 <div
-                  className="
+                  className='
                     flex
                     min-h-[175px]
                     flex-col
@@ -199,10 +188,9 @@ const AllTypes = () => {
                     px-5
                     py-6
                     text-center
-                  "
-                >
+                  '>
                   <div
-                    className="
+                    className='
                       mb-5
                       flex
                       h-16
@@ -212,30 +200,28 @@ const AllTypes = () => {
                       transition-transform
                       duration-300
                       group-hover:scale-110
-                    "
-                  >
+                    '>
                     <img
                       src={feature.icon}
                       alt={feature.name}
-                      className="h-14 w-14 object-contain"
+                      className='h-14 w-14 object-contain'
                     />
                   </div>
 
                   <h3
-                    className="
+                    className='
                       max-w-[210px]
                       largeScreenSubHead
                       font-semibold
                       leading-5
                       textOrange
                       sm:text-base
-                    "
-                  >
+                    '>
                     {feature.name}
                   </h3>
 
                   <div
-                    className="
+                    className='
                       mt-4
                       h-1
                       w-9
@@ -244,11 +230,11 @@ const AllTypes = () => {
                       transition-all
                       duration-300
                       group-hover:w-12
-                    "
+                    '
                   />
                 </div>
               )}
-            </div>
+            </Link>
           );
         })}
       </div>

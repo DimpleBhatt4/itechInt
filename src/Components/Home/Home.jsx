@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import HeroBanner from "../HeroBanner/HeroBanner";
 import About from "../About/About";
 import OurSolutions from "../OurSolutions/OurSolution";
@@ -5,13 +8,51 @@ import Industry from "../Industry/Industry";
 import CountryOperations from "../CountryOperation/CountryOperations";
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const sectionId = location.pathname.substring(1);
+
+    if (sectionId) {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [location.pathname]);
+
   return (
     <>
-      <HeroBanner />
-      <About />
-      <OurSolutions />
-      <Industry />
-      <CountryOperations />
+      <div id="home">
+        <HeroBanner />
+      </div>
+
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="solutions">
+        <OurSolutions />
+      </div>
+
+      <div id="industry">
+        <Industry />
+      </div>
+
+      <div id="country-operations">
+        <CountryOperations />
+      </div>
     </>
   );
 }

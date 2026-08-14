@@ -1,3 +1,4 @@
+import dummyImg from "../../assets/img1.jpeg"
 // ============================================================
 // PRODUCT DATA
 // ============================================================
@@ -76,7 +77,7 @@ export const cijProductInfo = {
 
   // Replace with your actual product images
   images: [
-    "/assets/assets/img1.jpeg",
+   dummyImg
   ],
 
   // brochure: {
@@ -159,7 +160,7 @@ export const laserProductInfo = {
   ],
 
   images: [
-    "/assets/img1.jpeg",
+    dummyImg,
   ],
 
   brochure: {
@@ -242,9 +243,7 @@ export const tijProductInfo = {
   ],
 
   images: [
-    "/assets/products/tij/tij-main.jpg",
-    "/assets/products/tij/tij-head.jpg",
-    "/assets/products/tij/tij-application.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -317,9 +316,7 @@ export const ttoProductInfo = {
   ],
 
   images: [
-    "/assets/products/tto/tto-main.jpg",
-    "/assets/products/tto/tto-mounted.jpg",
-    "/assets/products/tto/tto-application.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -392,8 +389,7 @@ export const largeCharacterProductInfo = {
   ],
 
   images: [
-    "/assets/products/lcp/lcp-main.jpg",
-    "/assets/products/lcp/lcp-application.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -466,8 +462,7 @@ export const highResolutionProductInfo = {
   ],
 
   images: [
-    "/assets/products/high-resolution/high-resolution-main.jpg",
-    "/assets/products/high-resolution/high-resolution-application.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -535,8 +530,7 @@ export const labelProductInfo = {
   ],
 
   images: [
-    "/assets/products/labels/label-main.jpg",
-    "/assets/products/labels/label-application.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -604,9 +598,7 @@ export const visionProductInfo = {
   ],
 
   images: [
-    "/assets/products/vision/vision-main.jpg",
-    "/assets/products/vision/vision-camera.jpg",
-    "/assets/products/vision/vision-application.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -674,8 +666,7 @@ export const checkweigherProductInfo = {
   ],
 
   images: [
-    "/assets/products/checkweigher/checkweigher-main.jpg",
-    "/assets/products/checkweigher/checkweigher-line.jpg",
+   dummyImg
   ],
 
   brochure: {
@@ -743,8 +734,7 @@ export const metalDetectorProductInfo = {
   ],
 
   images: [
-    "/assets/products/metal-detector/metal-detector-main.jpg",
-    "/assets/products/metal-detector/metal-detector-line.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -812,8 +802,7 @@ export const packagingProductInfo = {
   ],
 
   images: [
-    "/assets/products/packaging/packaging-main.jpg",
-    "/assets/products/packaging/packaging-line.jpg",
+    dummyImg
   ],
 
   brochure: {
@@ -881,8 +870,7 @@ export const trackTraceProductInfo = {
   ],
 
   images: [
-    "/assets/products/track-trace/track-trace-main.jpg",
-    "/assets/products/track-trace/track-trace-line.jpg",
+   dummyImg
   ],
 
   brochure: {
@@ -950,9 +938,7 @@ export const consumablesProductInfo = {
   ],
 
   images: [
-    "/assets/products/consumables/consumables-main.jpg",
-    "/assets/products/consumables/inks.jpg",
-    "/assets/products/consumables/ribbons.jpg",
+   dummyImg
   ],
 
   brochure: {

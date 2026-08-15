@@ -63,22 +63,37 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <div className="w-full bgOrange textBlue py-y px-2">
-      
+    <footer className="w-full bgOrange textBlue px-2">
+
       {/* ================= MAIN FOOTER ================= */}
-      <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b-2 border-gray-600 py-8">
+      <div
+        className="
+          mx-auto
+          grid
+          max-w-[1240px]
+          grid-cols-1
+          gap-10
+          border-b-2
+          border-gray-600
+          py-10
+          text-center
+          lg:grid-cols-6
+          lg:gap-6
+          lg:text-left
+        "
+      >
 
         {/* ================= NAVIGATION ================= */}
-        <div>
-          <h6 className="font-bold uppercase pt-2 text-white">
+        <div className="lg:col-span-1">
+          <h6 className="pt-2 font-bold uppercase textBlue underline">
             Navigation
           </h6>
 
-          <ul>
+          <ul className="mt-3">
             {navigation.map((item) => (
               <li
                 key={item.name}
-                className="py-1 text-gray-300 hover:text-white"
+                className="py-1 text-gray-300 transition hover:text-white"
               >
                 <Link to={item.path}>
                   {item.name}
@@ -89,16 +104,16 @@ const Footer = () => {
         </div>
 
         {/* ================= OUR SOLUTIONS ================= */}
-        <div className="col-span-1 md:col-span-2">
-          <h6 className="font-bold uppercase pt-2 text-white">
+        <div className="lg:col-span-2">
+          <h6 className="pt-2 font-bold uppercase textBlue underline">
             Our Solutions
           </h6>
 
-          <ul>
+          <ul className="mt-3">
             {products.map((product) => (
               <li
                 key={product.id}
-                className="py-1 text-gray-300 hover:text-white"
+                className="py-1 text-gray-300 transition hover:text-white"
               >
                 <Link to={`/products/${product.id}`}>
                   {product.name}
@@ -109,13 +124,14 @@ const Footer = () => {
         </div>
 
         {/* ================= CONTACT INFO ================= */}
-        <div className="col-span-1 md:col-span-2">
-          <h6 className="font-bold uppercase pt-2 text-white">
+        <div className="lg:col-span-2">
+          <h6 className="pt-2 font-bold uppercase textBlue underline">
             Contact Info
           </h6>
 
-          <div className="text-gray-300">
-            <p className="py-1 text-[#43c6d9] font-semibold">
+          <div className="mt-3 text-gray-300">
+
+            <p className="py-1 font-semibold textBlue">
               ITECH INKJET FZE
             </p>
 
@@ -133,7 +149,7 @@ const Footer = () => {
 
             <p>M : +971 52 946 2093</p>
 
-            <p className="mt-3 text-[#43c6d9] font-semibold">
+            <p className="mt-3 font-semibold textBlue">
               Sales Enquiry / 24X7 Customer
               <br />
               Support:
@@ -141,7 +157,7 @@ const Footer = () => {
 
             <a
               href="mailto:Info@itechinkjetprinting.com"
-              className="hover:text-white"
+              className="break-all transition hover:text-white"
             >
               Info@itechinkjetprinting.com
             </a>
@@ -149,12 +165,12 @@ const Footer = () => {
         </div>
 
         {/* ================= SOCIAL ================= */}
-        <div>
-          <h6 className="font-bold uppercase pt-2 text-white">
+        <div className="lg:col-span-1">
+          <h6 className="pt-2 font-bold uppercase textBlue underline">
             Social Connection
           </h6>
 
-          <div className="mt-2">
+          <div className="mt-3">
             {socialLinks.map((social) => {
               const Icon = social.icon;
 
@@ -164,9 +180,34 @@ const Footer = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center w-[235px] h-[38px] mb-2 rounded-full border border-gray-600 text-gray-300 hover:text-white"
+                  className="
+                    mx-auto
+                    flex
+                    h-[38px]
+                    w-full
+                    max-w-[235px]
+                    items-center
+                    rounded-full
+                    border
+                    border-gray-600
+                    text-gray-300
+                    transition
+                    hover:text-white
+                    lg:mx-0
+                  "
                 >
-                  <span className="flex items-center justify-center w-[38px] h-[38px] rounded-full bg-[#2878b5]">
+                  <span
+                    className="
+                      flex
+                      h-[38px]
+                      w-[38px]
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bgBlue
+                    "
+                  >
                     <Icon />
                   </span>
 
@@ -181,13 +222,25 @@ const Footer = () => {
       </div>
 
       {/* ================= COPYRIGHT ================= */}
-      <div className="flex flex-col max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-gray-300">
-        <p className="py-4 w-full">
-          Copyright © 2018 ITech Inkjet Printing Complete Solution
+      <div
+        className="
+          mx-auto
+          flex
+          max-w-[1240px]
+          justify-center
+          px-2
+          py-4
+          text-center
+          text-gray-300
+        "
+      >
+        <p className="py-4">
+          Copyright © 2026 ITech Inkjet Printing Complete Solution
           All right reserved.
         </p>
       </div>
-    </div>
+
+    </footer>
   );
 };
 

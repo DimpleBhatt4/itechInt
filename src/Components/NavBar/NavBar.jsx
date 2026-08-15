@@ -129,58 +129,44 @@ export default function NavBar() {
             </PopoverButton>
 
             <PopoverPanel className='absolute left-1/2 z-50 mt-5 w-screen max-w-6xl -translate-x-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-gray-900/10'>
-              <div className='p-8 lg:p-10'>
-                {/* Header */}
-                <div className='mb-8'>
-                  <p className='text-sm font-semibold text-indigo-600'>
-                    Our Products
-                  </p>
+              {({ close }) => (
+                <div className='p-8 lg:p-10'>
+                  {/* Header */}
+                  <div className='mb-8'>
+                    <p className='text-sm font-semibold text-indigo-600'>
+                      Our Products
+                    </p>
 
-                  <h3 className='mt-1 text-2xl font-semibold tracking-tight text-gray-900'>
-                    Industrial Coding, Marking & Inspection Solutions
-                  </h3>
+                    <h3 className='mt-1 text-2xl font-semibold tracking-tight text-gray-900'>
+                      Industrial Coding, Marking & Inspection Solutions
+                    </h3>
 
-                  <p className='mt-2 max-w-2xl text-sm leading-6 text-gray-600'>
-                    Explore our range of industrial printing, marking,
-                    inspection, packaging, and traceability solutions.
-                  </p>
+                    <p className='mt-2 max-w-2xl text-sm leading-6 text-gray-600'>
+                      Explore our range of industrial printing, marking,
+                      inspection, packaging, and traceability solutions.
+                    </p>
+                  </div>
+
+                  {/* Products */}
+                  <div className='grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3'>
+                    {products.map((product) => (
+                      <Link
+                        key={product}
+                        to={`/products/${product.id}`}
+                        onClick={() => close()}
+                        className='group flex items-center gap-x-4 rounded-xl p-3 transition hover:bg-gray-50'>
+                        <div className='flex size-10 shrink-0 items-center justify-center rounded-lg bg-gray-50 text-gray-400 transition group-hover:bg-indigo-50 group-hover:text-indigo-600'>
+                          <SquaresPlusIcon className='size-5' />
+                        </div>
+
+                        <span className='text-sm font-semibold leading-6 text-gray-900 transition group-hover:text-indigo-600'>
+                          {product.name}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-
-                {/* Products */}
-                <div className='grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3'>
-                  {products.map((product) => (
-                    <Link
-                      key={product.id}
-                      to={`/products/${product.id}`}
-                      className='group flex items-center gap-x-4 rounded-xl p-3 transition hover:bg-gray-50'>
-                      {/* Icon */}
-                      <div className='flex size-10 shrink-0 items-center justify-center rounded-lg bg-gray-50 text-gray-400 transition group-hover:bg-indigo-50 group-hover:text-indigo-600'>
-                        <SquaresPlusIcon className='size-5' />
-                      </div>
-
-                      {/* Product name */}
-                      <span className='text-sm font-semibold leading-6 text-gray-900 transition group-hover:text-indigo-600'>
-                        {product.name}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bottom CTA */}
-              <div className='flex flex-col gap-2 border-t border-gray-100 bg-gray-50 px-8 py-4 sm:flex-row sm:items-center sm:justify-between lg:px-10'>
-                <p className='text-sm text-gray-600'>
-                  Need help choosing the right solution?
-                </p>
-
-                <a
-                  href='https://wa.me/8006902440?text=Hi! I’d like to know more about your products and services.'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-sm font-semibold text-indigo-600 hover:text-indigo-500'>
-                  Talk to our experts
-                </a>
-              </div>
+              )}
             </PopoverPanel>
           </Popover>
 

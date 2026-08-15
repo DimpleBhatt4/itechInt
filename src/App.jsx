@@ -21,6 +21,7 @@ import {
   trackTraceProductInfo,
   consumablesProductInfo,
 } from "./Components/OurSolutions/productInfo";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const products = [
   cijProductInfo,
@@ -53,6 +54,7 @@ function ProductRoute() {
 function App() {
   return (
     <>
+    <ScrollToTop />
       <NavBar />
       <Routes>
         <Route path='/products/:productName' element={<ProductRoute />} />

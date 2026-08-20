@@ -166,6 +166,7 @@ const AllTypes = () => {
                         leading-6
                         textOrange
                         sm:text-lg
+                        largeScreenSubHead
                       '>
                       Industrial Consumables
                     </h3>
@@ -210,7 +211,6 @@ const AllTypes = () => {
 
                   <h3
                     className='
-                      max-w-[210px]
                       largeScreenSubHead
                       font-semibold
                       leading-5

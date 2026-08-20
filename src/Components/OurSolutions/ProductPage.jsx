@@ -8,17 +8,18 @@ export default function ProductPage({ data }) {
         {/* ================= TOP SECTION ================= */}
         <div className='grid grid-cols-1 gap-6 lg:grid-cols-12'>
           {/* IMAGE */}
-          <div className='flex min-h-[320px] items-center justify-center rounded-2xl bg-white p-8 shadow-sm lg:col-span-5'>
+          {/* <div className='flex min-h-[320px] items-center justify-center rounded-2xl bg-white p-8 shadow-sm lg:col-span-5'>
             <img
               src={data.images[0]}
               alt={data.label}
               className='max-h-[350px] w-full object-contain'
             />
-          </div>
+          </div> */}
+          <div className={`flex min-h-[320px] items-center justify-center rounded-2xl bg-white p-8 shadow-sm lg:col-span-5 product-sprite ${data.className}`} ></div>
 
           {/* USP */}
           <div className='rounded-2xl bg-white p-8 shadow-sm lg:col-span-7'>
-            <p className='text-sm font-semibold uppercase tracking-wide textOrange'>
+            <p className='text-xl font-bold uppercase tracking-wide textOrange'>
               Key Features
             </p>
 
@@ -26,7 +27,7 @@ export default function ProductPage({ data }) {
               {data.label}
             </h1>
 
-            <p className='mt-5 text-base leading-7 text-gray-600'>
+            <p className='mt-5 fontSize20px leading-7 textBlue'>
               {data.description}
             </p>
 
@@ -35,8 +36,8 @@ export default function ProductPage({ data }) {
               {data?.usp.map((item, index) => {
                 return (
                   <div className='flex gap-3' key={index}>
-                    <span className='textOrange'>✓</span>
-                    <span className='text-sm text-gray-700'>{item}</span>
+                    <span className='textOrange font-bold'>✓</span>
+                    <span className='text-xl textOrange font-bold'>{item}</span>
                   </div>
                 );
               })}
@@ -48,7 +49,7 @@ export default function ProductPage({ data }) {
         <div className='mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12'>
           {/* TECHNICAL SPECIFICATIONS */}
           <div className='rounded-2xl bg-white p-8 shadow-sm lg:col-span-7'>
-            <p className='text-sm font-semibold uppercase tracking-wide textOrange'>
+            <p className='text-xl font-bold uppercase tracking-wide textOrange'>
               Specifications
             </p>
 
@@ -62,10 +63,12 @@ export default function ProductPage({ data }) {
                   <div
                     className='grid grid-cols-2 border-b border-gray-200 px-4 py-4'
                     key={index}>
-                    <span className='font-bold text-gray-600'>
+                    <span className='font-bold textBlue fontSize20px'>
                       {item.label}
                     </span>
-                    <span className='text-gray-900'>{item.description}</span>
+                    <span className='textOrange font-bold fontSize20px '>
+                      {item.description}
+                    </span>
                   </div>
                 );
               })}
@@ -74,7 +77,7 @@ export default function ProductPage({ data }) {
 
           {/* VIDEO */}
           <div className='rounded-2xl bg-white p-8 shadow-sm lg:col-span-5'>
-            <p className='text-sm font-semibold uppercase tracking-wide textOrange'>
+            <p className='text-xl font-bold uppercase tracking-wide textOrange'>
               See It In Action
             </p>
 
@@ -97,7 +100,7 @@ export default function ProductPage({ data }) {
             Have questions about this solution?
           </h2>
 
-          <p className='mx-auto mt-2 max-w-2xl text-sm leading-6 text-gray-200'>
+          <p className='mx-auto mt-2 max-w-2xl text-lg leading-6 text-gray-200'>
             Our experts can help you choose the right solution for your
             production requirements.
           </p>
@@ -106,7 +109,7 @@ export default function ProductPage({ data }) {
             href='https://wa.me/8006902440?text=Hi! I’d like to know more about your products and services.'
             target='_blank'
             rel='noopener noreferrer'
-            className='mt-6 inline-flex rounded-md bgOrange px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90'>
+            className='mt-6 inline-flex rounded-md bgOrange px-5 py-3 text-xl font-bold text-white transition hover:opacity-90'>
             Connect With Our Experts
           </a>
         </div>

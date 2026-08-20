@@ -38,7 +38,7 @@ export default function Industry() {
             Solutions Built for Every Industry
           </p>
 
-          <p className="mt-6 max-w-3xl text-lg/8 text-white">
+          <p className="mt-6 max-w-3xl text-lg/8 text-white fontSize20px">
             From food to automotive, we deliver advanced coding, marking, inspection, and traceability solutions tailored to your industry needs
           </p>
         </div>

@@ -39,19 +39,19 @@ const products = [
   },
   {
     name: "Large Character Printers",
-    id: "large-character-printers",
+    id: "large-character",
   },
   {
     name: "High-Resolution Printers",
-    id: "high-resolution-printers",
+    id: "high-resolution",
   },
   {
-    name: "Label Printing & Applicators",
-    id: "label-printing-applicators",
+    name: "Track & Trace Solutions",
+    id: "track-trace",
   },
   {
     name: "Vision Inspection Systems",
-    id: "vision-inspection-systems",
+    id: "vision-inspection",
   },
   {
     name: "Checkweighers",
@@ -65,9 +65,10 @@ const products = [
     name: "Packaging Automation",
     id: "packaging-automation",
   },
+
   {
-    name: "Track & Trace Solutions",
-    id: "track-trace-solutions",
+    name: "Label Printing & Applicators",
+    id: "label-printing",
   },
   {
     name: "Industrial Consumables (Ink, Make-up, Solvents, Ribbons)",
@@ -133,18 +134,18 @@ export default function NavBar() {
                 <div className='p-8 lg:p-10'>
                   {/* Header */}
                   <div className='mb-8'>
-                    <p className='text-sm font-semibold text-indigo-600'>
+                    <p className='text-lg font-bold textOrange'>
                       Our Products
                     </p>
 
-                    <h3 className='mt-1 text-2xl font-semibold tracking-tight text-gray-900'>
+                    <h3 className='mt-1 text-2xl font-semibold tracking-tight textBlue'>
                       Industrial Coding, Marking & Inspection Solutions
                     </h3>
 
-                    <p className='mt-2 max-w-2xl text-sm leading-6 text-gray-600'>
+                    {/* <p className='mt-2 max-w-2xl text-md leading-6 textBlue'>
                       Explore our range of industrial printing, marking,
                       inspection, packaging, and traceability solutions.
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Products */}
@@ -155,11 +156,11 @@ export default function NavBar() {
                         to={`/products/${product.id}`}
                         onClick={() => close()}
                         className='group flex items-center gap-x-4 rounded-xl p-3 transition hover:bg-gray-50'>
-                        <div className='flex size-10 shrink-0 items-center justify-center rounded-lg bg-gray-50 text-gray-400 transition group-hover:bg-indigo-50 group-hover:text-indigo-600'>
+                        <div className='flex size-10 shrink-0 items-center justify-center rounded-lg bgOrange text-white transition group-hover:bg-white'>
                           <SquaresPlusIcon className='size-5' />
                         </div>
 
-                        <span className='text-sm font-semibold leading-6 text-gray-900 transition group-hover:text-indigo-600'>
+                        <span className='text-lg font-bold leading-6 textOrange transition group-hover:text-indigo-600'>
                           {product.name}
                         </span>
                       </Link>

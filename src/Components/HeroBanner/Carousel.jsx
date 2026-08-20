@@ -30,10 +30,10 @@ const images = [
     id: 3,
     src: img6,
   },
-  {
-    id: 4,
-    src: img7,
-  },
+  // {
+  //   id: 4,
+  //   src: img7,
+  // },
 ];
 
 export default function ImageCarousel() {

@@ -10,7 +10,7 @@ import dummyImg from "../../assets/img1.jpeg"
 export const cijProductInfo = {
   id: "cij",
   label: "Continuous Inkjet (CIJ)",
-
+  
   description:
     "Our CIJ printers deliver reliable, high-speed, and non-contact printing on a wide variety of surfaces. Ideal for applications that require clear, precise coding on moving production lines.",
 
@@ -94,6 +94,7 @@ export const cijProductInfo = {
   ],
 
   videoUrl: "/assets/videos/cij-demo.mp4",
+  className: "product-cij"
 };
 
 
@@ -107,7 +108,7 @@ export const laserProductInfo = {
 
   description:
     "Advanced laser marking systems designed for permanent, high-quality marking and coding on a wide range of industrial materials and products.",
-
+  className: "product-laser",
   usp: [
     "Permanent and high-contrast marking",
     "High-speed non-contact operation",
@@ -192,6 +193,7 @@ export const laserProductInfo = {
 export const tijProductInfo = {
   id: "tij",
   label: "Thermal Inkjet (TIJ)",
+    className: "product-tij",
 
   description:
     "Compact and reliable thermal inkjet printers designed for high-resolution coding and marking applications across a variety of industrial products and packaging.",
@@ -270,6 +272,7 @@ export const tijProductInfo = {
 export const ttoProductInfo = {
   id: "tto",
   label: "Thermal Transfer Overprinters (TTO)",
+    className: "product-tto",
 
   description:
     "Thermal transfer overprinting solutions for high-quality variable data, batch codes, expiry dates and graphics on flexible packaging materials.",
@@ -343,6 +346,7 @@ export const ttoProductInfo = {
 export const largeCharacterProductInfo = {
   id: "large-character",
   label: "Large Character Printers",
+    className: "product-large-character",
 
   description:
     "Robust large character printing systems designed for high-visibility coding on porous and non-porous industrial products.",
@@ -416,6 +420,7 @@ export const largeCharacterProductInfo = {
 export const highResolutionProductInfo = {
   id: "high-resolution",
   label: "High-Resolution Printers",
+    className: "product-high-resolution",
 
   description:
     "High-resolution industrial printing systems for sharp text, barcodes, logos, graphics and variable data on packaging and products.",
@@ -489,7 +494,7 @@ export const highResolutionProductInfo = {
 export const labelProductInfo = {
   id: "label-printing",
   label: "Label Printing & Applicators",
-
+className:"product-label-applicator",
   description:
     "Integrated label printing and application systems for accurate, automated and high-speed product identification and traceability.",
 
@@ -557,7 +562,7 @@ export const labelProductInfo = {
 export const visionProductInfo = {
   id: "vision-inspection",
   label: "Vision Inspection Systems",
-
+className:"product-vision-inspection",
   description:
     "Automated vision inspection systems designed to verify product quality, print quality, labels, codes and packaging integrity.",
 
@@ -625,7 +630,7 @@ export const visionProductInfo = {
 export const checkweigherProductInfo = {
   id: "checkweighers",
   label: "Checkweighers",
-
+className: "product-checkweigher",
   description:
     "High-speed dynamic checkweighing systems for accurate weight verification and quality control across automated production lines.",
 
@@ -693,7 +698,7 @@ export const checkweigherProductInfo = {
 export const metalDetectorProductInfo = {
   id: "metal-detectors",
   label: "Metal Detectors",
-
+className:"product-metal-detector",
   description:
     "Industrial metal detection systems designed to identify and reject metallic contaminants in food, pharmaceutical and manufacturing processes.",
 
@@ -761,7 +766,7 @@ export const metalDetectorProductInfo = {
 export const packagingProductInfo = {
   id: "packaging-automation",
   label: "Packaging Automation",
-
+className:"product-packaging",
   description:
     "Integrated packaging automation solutions designed to improve production efficiency, consistency and overall line performance.",
 
@@ -829,7 +834,7 @@ export const packagingProductInfo = {
 export const trackTraceProductInfo = {
   id: "track-trace",
   label: "Track & Trace Solutions",
-
+ className:"product-track-trace",
   description:
     "End-to-end track and trace solutions that enable manufacturers to identify, monitor and trace products throughout the supply chain.",
 
@@ -897,7 +902,7 @@ export const trackTraceProductInfo = {
 export const consumablesProductInfo = {
   id: "industrial-consumables",
   label: "Industrial Consumables",
-
+ className:"product-consumables",
   description:
     "A complete range of genuine industrial consumables including inks, make-up fluids, solvents and ribbons to maintain reliable printer performance.",
 

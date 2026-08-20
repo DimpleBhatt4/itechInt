@@ -11,7 +11,6 @@ export default function HeroBanner() {
         bgBlue
         px-6
         pt-16
-        shadow-2xl
         sm:px-10
         sm:pt-20
         md:px-16
@@ -39,7 +38,7 @@ export default function HeroBanner() {
         <h2
           className='
             text-3xl
-            font-semibold
+            font-bold
             tracking-tight
             text-balance
             text-white
@@ -56,7 +55,9 @@ export default function HeroBanner() {
             text-base/7
             text-pretty
             text-gray-300
+            fontSize20px
             sm:text-lg/8
+            font-semibold
           '>
           Delivering innovative coding, packaging, inspection, labeling, and
           traceability solutions across the Middle East and East Africa.
@@ -85,8 +86,8 @@ export default function HeroBanner() {
               px-3.5
               py-2.5
               text-center
-              text-sm
-              font-semibold
+              text-lg
+              font-bold
               textGrey
               shadow-xs
               transition
@@ -95,7 +96,7 @@ export default function HeroBanner() {
             '>
             Contact Our Experts
           </a>
-
+{/* 
           <a
             href='#'
             className='
@@ -106,7 +107,7 @@ export default function HeroBanner() {
               hover:text-gray-300
             '>
             Learn more <span aria-hidden='true'>→</span>
-          </a>
+          </a> */}
         </div>
       </div>
 
@@ -126,10 +127,7 @@ export default function HeroBanner() {
           className='
             w-full
             rounded-2xl
-            bg-white/5
             p-2
-            ring-1
-            ring-white/10
             sm:p-3
             h-full
           '>

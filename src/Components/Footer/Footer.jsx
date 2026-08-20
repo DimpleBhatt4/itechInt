@@ -85,7 +85,7 @@ const Footer = () => {
 
         {/* ================= NAVIGATION ================= */}
         <div className="lg:col-span-1">
-          <h6 className="pt-2 font-bold uppercase textBlue underline">
+          <h6 className="pt-2 font-bold uppercase textBlue underline fontSize20px">
             Navigation
           </h6>
 
@@ -93,7 +93,7 @@ const Footer = () => {
             {navigation.map((item) => (
               <li
                 key={item.name}
-                className="py-1 text-gray-300 transition hover:text-white"
+                className="py-1 text-gray-300 transition hover:text-white fontSize20px"
               >
                 <Link to={item.path}>
                   {item.name}
@@ -105,7 +105,7 @@ const Footer = () => {
 
         {/* ================= OUR SOLUTIONS ================= */}
         <div className="lg:col-span-2">
-          <h6 className="pt-2 font-bold uppercase textBlue underline">
+          <h6 className="pt-2 font-bold uppercase textBlue underline fontSize20px">
             Our Solutions
           </h6>
 
@@ -113,7 +113,7 @@ const Footer = () => {
             {products.map((product) => (
               <li
                 key={product.id}
-                className="py-1 text-gray-300 transition hover:text-white"
+                className="py-1 text-gray-300 transition hover:text-white fontSize20px"
               >
                 <Link to={`/products/${product.id}`}>
                   {product.name}
@@ -125,11 +125,11 @@ const Footer = () => {
 
         {/* ================= CONTACT INFO ================= */}
         <div className="lg:col-span-2">
-          <h6 className="pt-2 font-bold uppercase textBlue underline">
+          <h6 className="pt-2 font-bold uppercase textBlue underline fontSize20px">
             Contact Info
           </h6>
 
-          <div className="mt-3 text-gray-300">
+          <div className="mt-3 text-gray-300 fontSize20px">
 
             <p className="py-1 font-semibold textBlue">
               ITECH INKJET FZE
@@ -166,8 +166,8 @@ const Footer = () => {
 
         {/* ================= SOCIAL ================= */}
         <div className="lg:col-span-1">
-          <h6 className="pt-2 font-bold uppercase textBlue underline">
-            Social Connection
+          <h6 className="pt-2 font-bold uppercase textBlue underline fontSize20px">
+            Links
           </h6>
 
           <div className="mt-3">
@@ -211,7 +211,7 @@ const Footer = () => {
                     <Icon />
                   </span>
 
-                  <span className="px-5">
+                  <span className="px-5 ">
                     {social.name}
                   </span>
                 </a>

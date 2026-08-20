@@ -41,7 +41,7 @@ export default function OurSolutions() {
             Smart Solutions For Every Step Of Your Production
           </p>
 
-          <p className="mt-6 max-w-3xl text-lg/8 text-white">
+          <p className="mt-6 max-w-3xl fontSize20px text-white">
             End-to-end coding, marking, inspection, and packaging solutions
             designed to improve productivity, ensure quality, and drive
             operations efficiently.
@@ -57,7 +57,7 @@ export default function OurSolutions() {
           mx-auto
           -mt-14
           w-[calc(100%-2rem)]
-          max-w-7xl
+          max-w-8xl
           rounded-4xl
           bg-white
           

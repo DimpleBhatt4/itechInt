@@ -38,5 +38,78 @@ body {
 /* Font sizes */
 
 .largeScreenSubHead{
+  font-size: 22px;
+}
+
+.fontSize20px{
   font-size: 20px;
+
+}
+
+/* Sprites */
+.product-sprite {
+  /* width: aut; */
+  /* height: 200px; */
+
+  background-image: url("./assets/printers/allPrintersSprite.PNG");
+  background-repeat: no-repeat;
+  background-size: 500% 300%;
+
+  /* Prevent the browser from showing any part outside the sprite cell */
+  overflow: hidden;
+}
+
+/* Row 1 */
+.product-cij {
+  background-position: 0% 0%;
+}
+
+.product-laser {
+  background-position: 25% 0%;
+}
+
+.product-tij {
+  background-position: 50% 0%;
+}
+
+.product-tto {
+  background-position: 75% 0%;
+}
+
+.product-large-character {
+  background-position: 100% 0%;
+}
+
+/* Row 2 */
+.product-high-resolution {
+  background-position: 0% 50%;
+}
+
+.product-track-trace {
+  background-position: 25% 50%;
+}
+
+.product-vision-inspection {
+  background-position: 50% 50%;
+}
+
+.product-checkweigher {
+  background-position: 75% 50%;
+}
+
+.product-metal-detector {
+  background-position: 100% 50%;
+}
+
+/* Row 3 */
+.product-packaging {
+  background-position: 0% 100%;
+}
+
+.product-label-applicator {
+  background-position: 25% 100%;
+}
+
+.product-consumables {
+  background-position: 50% 100%;
 }

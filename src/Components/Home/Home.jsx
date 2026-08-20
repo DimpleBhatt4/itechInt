@@ -6,6 +6,8 @@ import About from "../About/About";
 import OurSolutions from "../OurSolutions/OurSolution";
 import Industry from "../Industry/Industry";
 import CountryOperations from "../CountryOperation/CountryOperations";
+import VideoModal from "../DemoVideos/VideoModal";
+import DemoVideos from "../DemoVideos/DemoVideos";
 
 export default function Home() {
   const location = useLocation();
@@ -36,6 +38,7 @@ export default function Home() {
     <>
       <div id="home">
         <HeroBanner />
+        <DemoVideos />
       </div>
 
       <div id="about">
